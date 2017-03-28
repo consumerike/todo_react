@@ -7,6 +7,7 @@ class TodoComponent extends React.component {
         super(props);
         this.state = {todos: ['wash', 'eat cheese', 'nap']}
     }
+    //OR getInitialState: function(){ return {state}}
     render() {
         return (
             <div>
