@@ -16,10 +16,10 @@ class TodoComponent extends React.Component {
             return (
                 <TodoItem item={item} key={index} />
             );
-        })
+        }.bind(this));
         return (
             <div>
-                <h1>Hey World!</h1>
+                <h1 onClick={this.click}>Hey World!</h1>
                 <ul>{todos}</ul>
             </div>
         );
