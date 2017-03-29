@@ -9,14 +9,16 @@ class TodoComponent extends React.component {
     }
     //OR getInitialState: function(){ return {state}}
     render() {
+        let todos = this.state.todos;
+        todos = todos.map(function(item, index) {
+            return (
+                <li>{item}</li>
+            );
+        })
         return (
             <div>
                 <h1>Hey World!</h1>
-                <ul>
-                    <li>this.state.todos[0]</li>
-                    <li>this.state.todos[1]</li>
-                    <li>this.state.todos[2]</li>
-                </ul>
+                <ul>{todos}</ul>
             </div>
         );
     }
