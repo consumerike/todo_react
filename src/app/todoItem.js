@@ -1,7 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 //CSS requires
-require('./css/todoItem.css');
+import './css/todoItem.css';
 
 class TodoItem extends React.Component {
     render () {    
@@ -14,6 +13,12 @@ class TodoItem extends React.Component {
             </li>
         );
     }
+
+
+    handleDelete() {
+        this.props.onDelete(this.props.item);
+    }
+
 
 }
 

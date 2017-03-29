@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+//import necessary components:
+import TodoItem from './todoItem';
 //creating the first component
 class TodoComponent extends React.Component {
     constructor(props) {
