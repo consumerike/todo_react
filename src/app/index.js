@@ -26,6 +26,18 @@ class TodoComponent extends React.component {
     }
 }
 
+
+/* OR
+Create a todo item react-way
+ let todoItem = React.createClass({
+    render: function(){
+         return (
+
+        );
+    }
+ });
+*/
+
 // To insert component into HTML:
 ReactDom.render(<TodoComponent />, document.getElementById("todo-wrapper"));
 
