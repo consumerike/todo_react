@@ -24,6 +24,9 @@ class TodoComponent extends React.Component {
             </div>
         );
     }
+    click () {
+        console.log("print to console...");
+    }
 }
 
 class TodoItem extends React.Component {
