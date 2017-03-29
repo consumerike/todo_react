@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 //creating the first component
-class TodoComponent extends React.component {
+class TodoComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {todos: ['wash', 'eat cheese', 'nap']}
@@ -14,7 +14,7 @@ class TodoComponent extends React.component {
         //let todos = {...this.state.todos}
         todos = todos.map(function(item, index) {
             return (
-                <li>{item}</li>
+                <TodoItem item={item} key={index} />
             );
         })
         return (
@@ -26,6 +26,18 @@ class TodoComponent extends React.component {
     }
 }
 
+class TodoItem extends React.Component {
+    render () {    
+        return(
+            <li>
+                <div className="todo-item">
+                    <span className="item-name">{this.props.item}</span>
+                </div>
+            </li>
+        );
+    }
+
+}
 
 /* OR
 Create a todo item react-way
@@ -39,6 +51,6 @@ Create a todo item react-way
 */
 
 // To insert component into HTML:
-ReactDom.render(<TodoComponent />, document.getElementById("todo-wrapper"));
+ReactDOM.render(<TodoComponent />, document.getElementById("todo-wrapper"));
 
 
