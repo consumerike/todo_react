@@ -10,6 +10,8 @@ class TodoComponent extends React.component {
     //OR getInitialState: function(){ return {state}}
     render() {
         let todos = this.state.todos;
+        //OR would it be better to copy state here?
+        //let todos = {...this.state.todos}
         todos = todos.map(function(item, index) {
             return (
                 <li>{item}</li>
