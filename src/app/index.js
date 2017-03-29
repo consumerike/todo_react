@@ -37,10 +37,6 @@ class TodoComponent extends React.Component {
     }
 }
 
-    handleDelete() {
-        this.props.onDelete(this.props.item);
-    }
-
 
 // To insert component into HTML:
 ReactDOM.render(<TodoComponent />, document.getElementById("todo-wrapper"));
