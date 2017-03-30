@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+// require('./css/index.css');
+import './css/index.css';
 //import necessary components:
 import TodoItem from './todoItem';
+import AddItem from './addItem';
 //creating the first component
+
 class TodoComponent extends React.Component {
     constructor(props) {
         super(props);
@@ -21,8 +24,9 @@ class TodoComponent extends React.Component {
         }.bind(this));
         return (
             <div>
-                <h1 onClick={this.click}>Hey World!</h1>
+                <h1>Hey World!</h1>
                 <ul>{todos}</ul>
+                <AddItem onAdd={this.onAdd}/>
             </div>
         );
     }
@@ -30,13 +34,31 @@ class TodoComponent extends React.Component {
     onDelete(item){
         // let updatedTodos = {...this.state.todos} If making a copy to change
         // state...
-        let updatedTodos = updatedTodos.filter(function(val,index){
+        let updatedTodos = this.state.todos.filter(function(val,index){
             return item ==! val;
         });
         this.setState({
             todos: updatedTodos
         });
     }
+
+    onAdd(item) {
+        let updatedTodos = this.state.todos;
+        updatedTodos.push(item);
+        this.setState({
+            todos: updatedTodos
+        })
+    }
+
+    componentWillMount () {
+        console.log("mounting component");
+    }
+
+    componentDidMount () {
+        console.log("component mounted");
+    }
+
+
 }
 
 
