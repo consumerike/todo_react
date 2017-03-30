@@ -20,7 +20,7 @@ class AddItem extends React.Component {
 //start of custom functions
     handleSubmit(event) {
         event.preventDefault();
-        console.log(this.refs.newItem.value)
+        this.props.onAdd(this.refs.newItem.value);
     }
 }
 
