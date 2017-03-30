@@ -6,6 +6,28 @@ import './css/index.css';
 import TodoItem from './todoItem';
 import AddItem from './addItem';
 //creating the first component
+import {Router, Route} from "react-router";
+
+const App = () {
+    return (
+        <Router>
+            <Route path={'/'} component={TodoComponent}></Route>
+        </Router
+    )
+}
+
+// OR
+/*
+const App = React.createClass({
+    render: function() {
+        return (
+            <Router>
+                <Route path={''}></Route>
+            </Router
+        )
+    }
+})
+*/
 
 class TodoComponent extends React.Component {
     constructor(props) {
