@@ -6,11 +6,11 @@ import './css/index.css';
 import TodoItem from './todoItem';
 import AddItem from './addItem';
 //creating the first component
-import {Router, Route} from "react-router";
+import {Router, Route, browserHistory} from "react-router";
 
 const App = () {
     return (
-        <Router>
+        <Router history={browserHistory}>
             <Route path={'/'} component={TodoComponent}></Route>
         </Router
     )
@@ -85,6 +85,6 @@ class TodoComponent extends React.Component {
 
 
 // To insert component into HTML:
-ReactDOM.render(<TodoComponent />, document.getElementById("todo-wrapper"));
+ReactDOM.render(<App />, document.getElementById("todo-wrapper"));
 
 
